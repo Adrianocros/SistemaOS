@@ -1,0 +1,7 @@
+spring.datasource.url=${JDBC_DATASOURCE_URL}
+spring.jpa.hibernate.ddl-auto=true
+ spring.jpa.show-sql=true
+ 
+
+ 
+ 
