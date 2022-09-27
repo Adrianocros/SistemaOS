@@ -28,6 +28,22 @@
 - DTO
 - Resposta padronizada para HTTP
 
+### Comandos para subir o projeto
+
+Front End
+
+No terminal do VSCode - ng serve
+
+BackEnd 
+
+Altera o application-dev.properties no comando spring.jpa.hibernate.ddl-auto para = create
+
+Execute o OSApplication.java do main
+
+
+
+
+
 
 
 
