@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import javax.validation.constraints.NotEmpty;
 
 import com.adriano.os.domain.OS;
+import com.adriano.os.domain.enuns.Prioridade;
+import com.adriano.os.domain.enuns.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
@@ -97,16 +99,16 @@ public class OSDTO implements Serializable{
 		this.cliente = cliente;
 	}
 
-	public Integer getPrioridade() {
-		return prioridade;
+	public Prioridade getPrioridade() {
+		return Prioridade.toEnum(this.prioridade);
 	}
 
 	public void setPrioridade(Integer prioridade) {
 		this.prioridade = prioridade;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Status getStatus() {
+		return Status.toEnum(this.status);
 	}
 
 	public void setStatus(Integer status) {

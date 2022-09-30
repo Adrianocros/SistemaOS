@@ -1,0 +1,23 @@
+<form class="mat-elevation-z8" class="form">
+    <h1>Novo Cliente</h1>
+    <mat-form-field class="full-width">
+        <mat-label>Nome Completo</mat-label>
+        <input [(ngModel)]="cliente.nome" [formControl]="nome" required maxlength="100" name="nome" matInput placeholder="Nome">
+        <mat-error *ngIf="nome.invalid">{{errorValidNome()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>CPF</mat-label>
+        <input [(ngModel)]="cliente.cpf" [formControl]="cpf" required maxlength="15" name="cpf" matInput placeholder="CPF">
+        <mat-error *ngIf="cpf.invalid">{{errorValidCpf()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input [(ngModel)]="cliente.telefone" [formControl]="telefone" required maxlength="15" name='telefone' matInput placeholder="Telefone">
+        <mat-error *ngIf="cpf.invalid">{{ errorValidTelefone()}}</mat-error>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="create()" [disabled]="errorValidNome() || errorValidCpf() || errorValidTelefone() " mat-flat-button color="accent">Salvar</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-flat-button color="warn">Cancelar</button>
+
+</form>

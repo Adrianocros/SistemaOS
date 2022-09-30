@@ -38,8 +38,10 @@ export class TecnicoUpdateComponent implements OnInit {
     },(err) => {
         if (err.error.error.match("ja cadastado")){
           this.service.message(err.error.error)
-        }else if(err.error.erros[0].message === "número do registro de contribuinte individual brasileiro (CPF) inválido")
-          this.service.message("CPF inválido !")
+        }else if(err.error.erros[0].message === "número do registro de contribuinte individual brasileiro (CPF) inválido"){
+          this.service.message("CPF inválido !");
+        }
+          
       })
   }
 
