@@ -7,10 +7,13 @@ import { ClienteUpdateComponent } from './views/components/cliente/cliente-updat
 import { HomeComponent } from './views/components/home/home.component';
 import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 import { OsReadComponent } from './views/components/os/os-read/os-read.component';
+import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
 import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
+import { OsViewComponent } from './views/components/os/os-view/os-view.component';
+import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 
 const routes: Routes = [
   {
@@ -54,9 +57,22 @@ const routes: Routes = [
     component:OsReadComponent
   },
   {
+    path:'os/closed',
+    component:OsClosedComponent
+  },
+  {
     path:'os/create',
     component:OsCreateComponent
+  },
+  {
+    path:'os/update/:id',
+    component:OsUpdateComponent
+  },
+  {
+    path:'os/view/:id',
+    component:OsViewComponent
   }
+
 ];
 
 @NgModule({

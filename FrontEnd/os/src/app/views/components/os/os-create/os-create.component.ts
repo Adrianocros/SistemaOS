@@ -14,23 +14,21 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
   styleUrls: ["./os-create.component.css"],
 })
 export class OsCreateComponent implements OnInit {
-
-
-  os: OS ={
-    tecnico:'',
-    cliente:"",
-    observacoes:"",
-    status:"",
-    prioridade:"",
-  }
+  os: OS = {
+    tecnico: "",
+    cliente: "",
+    observacoes: "",
+    status: "",
+    prioridade: "",
+  };
 
   tecnicos: Tecnico[] = [];
   clientes: Cliente[] = [];
   constructor(
     private tecnicoService: TecnicoService,
     private clienteService: ClienteService,
-    private service : OsService,
-    private router : Router
+    private service: OsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,23 +36,26 @@ export class OsCreateComponent implements OnInit {
     this.listarClentes();
   }
 
-  create():void{
-    this.service.create(this.os).subscribe(resposta =>{
-      this.service.message("Ordem de Serviço criada com sucesso !")
-      this.router.navigate(['os'])
-    })
+  create(): void {
+    this.service.create(this.os).subscribe((resposta) => {
+      this.service.message("Ordem de Serviço criada com sucesso !");
+      this.router.navigate(["os"]);
+    });
+  }
+
+  cancel():void{
+     this.router.navigate(["os"]);
   }
 
   listarTecnicos(): void {
-    this.tecnicoService.findAll().subscribe(resposta => {
+    this.tecnicoService.findAll().subscribe((resposta) => {
       this.tecnicos = resposta;
     });
   }
 
-  listarClentes():void{
-    this.clienteService.findAll().subscribe(resposta => {
+  listarClentes(): void {
+    this.clienteService.findAll().subscribe((resposta) => {
       this.clientes = resposta;
-    })
+    });
   }
-
 }
